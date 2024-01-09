@@ -1,11 +1,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
     <head>
 
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+        <link rel="stylesheet" href ="<c:url value="/resources/css/style.css"/>" >
 
         <%--        import Bootstrap--%>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+        <link rel="stylesheet" href ="<c:url value="/resources/css/bootstrap.min.css"/>" >
 
     </head>
     <body>
@@ -16,11 +17,13 @@
                 <div class="col-md-6">
                     <form:label path="username" class="form-label">Username</form:label>
                     <form:input type="text" class="form-control"  path="username"/>
+                    <form:errors path="username" cssClass="error"/>
                     <br>
                 </div>
                 <div class="col-md-6">
                     <form:label path="Email" class="form-label">Email address</form:label>
                     <form:input type="text" class="form-control"  path="email"/>
+                    <form:errors path="email" cssClass="error"/>
                 </div>
                 <div class="col-md-6">
                     <form:label path="password" class="form-label">Password</form:label>
