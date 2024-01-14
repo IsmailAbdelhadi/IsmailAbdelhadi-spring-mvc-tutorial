@@ -7,3 +7,49 @@ h1 {
 
 color: red;
 }
+
+body {
+    background-color: #f0f0f0;
+ }
+
+ .container {
+     margin-top: 50px;
+ }
+
+ .card {
+     background-color: #4CAF50;
+     border-radius: 15px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     padding: 20px;
+ }
+
+ h1 {
+     text-align: center;
+     color: #fff;
+     margin-bottom: 20px;
+ }
+
+ .form-label {
+     font-weight: bold;
+     color: #fff;
+ }
+
+ .error {
+     color: #dc3545;
+     margin-top: 5px;
+ }
+
+ .form-control {
+     border-radius: 5px;
+     padding: 8px;
+     margin-bottom: 10px;
+ }
+
+ button {
+     border-radius: 5px;
+     padding: 10px 15px;
+     font-size: 16px;
+     background-color: #ff8c00; /* Dark Orange */
+     color: #fff;
+     border: none;
+ }
