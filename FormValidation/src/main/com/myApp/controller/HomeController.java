@@ -16,8 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
-public class HomeController
-{
+public class HomeController {
 
     @RequestMapping("/")
     public String showHomePage(Model model)
