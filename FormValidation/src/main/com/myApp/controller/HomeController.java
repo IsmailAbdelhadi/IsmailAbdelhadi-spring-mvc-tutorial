@@ -1,6 +1,8 @@
 package main.com.myApp.controller;
 
+import main.com.myApp.dao.UserDao;
 import main.com.myApp.model.UserModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.sql.SQLException;
 
 @Controller
 public class HomeController {
+
+    @Autowired
+    private UserDao userDao;
 
     @RequestMapping("/")
     public String showHomePage(Model model)
@@ -26,16 +32,16 @@ public class HomeController {
     }
 
     @RequestMapping("/processForm")
-    public String processForm(@Valid @ModelAttribute("userModel") UserModel userModel, BindingResult bindingResult, Model model)
+    public String processForm(Model model, @Valid @ModelAttribute("userModel") UserModel userModel, BindingResult bindingResult) throws SQLException
     {
         if (bindingResult.hasErrors()) {
             return "formPage";
         }
 
-        //step2: add name to model
+        // add name to model
         model.addAttribute("userModelObj" , userModel);
 
-        //step3: return view page
+        //return view page
         return "resultPage";
     }
 
