@@ -8,6 +8,8 @@
     <h1>Hello to Student App</h1>
     <h3>username is : ${userModelObj.username} </h3>
     <h3>password is : ${userModelObj.password} </h3>
+
+    <h3>your data sent successfully</h3>
 </body>
 </html>
 

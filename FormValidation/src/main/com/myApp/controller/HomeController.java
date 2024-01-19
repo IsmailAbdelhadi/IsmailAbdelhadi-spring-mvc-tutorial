@@ -38,6 +38,9 @@ public class HomeController {
             return "formPage";
         }
 
+        //insert data into database
+        userDao.insert(userModel);
+
         // add name to model
         model.addAttribute("userModelObj" , userModel);
 

@@ -34,17 +34,18 @@ public class DatabaseOperations {
     @PostConstruct
     private void connectToDatabase() {
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("Database connection established...");
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
 
 
     @PreDestroy
-    private  void disconnectToDatabase()  {
+    private  void disconnectToDatabase() throws SQLException {
         try {
             connection.close();
             System.out.println("connection closed....");

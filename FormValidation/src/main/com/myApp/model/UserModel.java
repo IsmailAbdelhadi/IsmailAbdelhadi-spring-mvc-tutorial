@@ -11,7 +11,7 @@ import javax.validation.constraints.Pattern;
 @Component
 @Setter
 @Getter
-//@FieldMatch(first = "password", second = "confirmPassword", message = "The password field must match")
+@FieldMatch(first = "password", second = "confirmPassword", message = "The password field must match")
 public class UserModel {
 
     //NotEmpty annotation replace @NotNull and @Siz(min=1)
